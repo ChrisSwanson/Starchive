@@ -11,7 +11,7 @@ BUILD_ID=$(shell git log -1 --pretty=format:"%H")
 BUILD_TIME=$(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 # -s and -w flags to remove unneccesary debug information
-LDFLAGS="-s -w -X BuildVersion=${NEW_VERSION_REV} -X BuildTime=${BUILD_TIME} -X BuildID=${BUILD_ID}"
+LDFLAGS="-s -w -X main.BuildVersion=${NEW_VERSION_REV} -X main.BuildTime=${BUILD_TIME} -X main.BuildID=${BUILD_ID}"
 
 .PHONY : build
 build : git-status clean inc-revision build-dir
