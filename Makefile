@@ -56,3 +56,7 @@ git-status:
 		echo "Error - working directory is dirty. Commit those changes!"; \
 		exit 1; \
 	fi
+
+.PHONY : git-tag
+git-tag:
+	git tag "v${VERSION}"
